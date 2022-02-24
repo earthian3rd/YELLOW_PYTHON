@@ -73,6 +73,7 @@ def HtmlTemplate(article, id=None):
 def index(request):
     article = '''
     <h1>welcome to index</h1>
+    <h2>git master</h2>
     '''
     return HttpResponse(HtmlTemplate(article))
 
@@ -145,3 +146,6 @@ def delete(request):
                 newTopics.append(topic)
         topics = newTopics
         return redirect('/')
+
+
+##추가한 코드##
