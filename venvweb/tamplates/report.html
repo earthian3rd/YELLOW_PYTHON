@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>report page</title>
+        <style>
+            section {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Searching result</h1>
+        <h3>We found {{rusultsNumber}} result for {{searchingBy}}</h3>
+        <a href="/export?word={{searchingBy}}">Export to CSV</a>
+        </a>
+        <section>
+            <h4>Title</h4>
+            <h4>Company</h4>
+            <h4>Location</h4>
+            <h4>Link</h4>
+            {% for jobs in jobs%}
+                <span>{{jobs.title}}</span>
+                <span>{{jobs.company}}</span>
+                <span>{{jobs.location}}</span>
+                <a href="{{jobs.link}}" target="_blank">Apply</a>
+            {%endfor%}
+        </section>
+        
+    </body>
+</html>
